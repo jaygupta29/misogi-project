@@ -1,0 +1,148 @@
+:root {
+  --bg: #1e1e2f;
+  --surface: #2a2a3b;
+  --text: #f1f1f1;
+  --accent: #4f8cff;
+  --danger: #ff4f4f;
+  --success: #00c46f;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+h2, h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+section {
+  background-color: var(--surface);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+label {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+  color: var(--text);
+}
+
+textarea, input, select, button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  background: #2e2e3e;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+input[type="date"] {
+  background: #2e2e3e;
+  color: var(--text);
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #397ae5;
+}
+
+.preview {
+  background: #1a1a28;
+  border: 1px dashed #888;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  color: var(--text);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #262637;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #3a3a4e;
+}
+
+th {
+  background: #34344b;
+  color: var(--text);
+}
+
+td {
+  color: #ccc;
+}
+
+textarea.feedback {
+  background: #2e2e3e;
+  color: white;
+  resize: vertical;
+  border: 1px solid #444;
+}
+
+.auth-box {
+  max-width: 400px;
+  margin: auto;
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
+
+.logoutBtn {
+  margin-top: 2rem;
+  background: var(--danger);
+}
+
+.logoutBtn:hover {
+  background: #ff3333;
+}
+
+#managerNotice {
+  background: var(--accent);
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}

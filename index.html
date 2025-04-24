@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevLog – Developer Daily Logs</title>
+
+  <link rel="stylesheet" href="styles/main.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- 🔐 Register -->
+<section id="registerSection" class="auth-box hidden">
+  <h2>Create Account</h2>
+  <input type="text" id="registerUsername" placeholder="Username" />
+  <select id="registerRole">
+    <option value="developer">Developer</option>
+    <option value="manager">Manager</option>
+  </select>
+  <button id="registerBtn">Register</button>
+  <p><button id="showLoginBtn">Back to Login</button></p>
+</section>
+
+<!-- 🔐 Login -->
+<section id="loginSection" class="auth-box">
+  <h2>Login</h2>
+  <input type="text" id="loginUsername" placeholder="Username" />
+  <select id="loginRole">
+    <option value="developer">Developer</option>
+    <option value="manager">Manager</option>
+  </select>
+  <button id="loginBtn">Login</button>
+  <p><button id="showRegisterBtn">Create new account</button></p>
+</section>
+
+<!-- 👩‍💻 Developer -->
+<section id="developerSection" class="hidden">
+  <h2>Developer Dashboard</h2>
+
+  <label>Tasks (Markdown)</label>
+  <textarea id="taskInput" rows="4"></textarea>
+  <div id="markdownPreview" class="preview"></div>
+
+  <label>Time Spent (hours)</label>
+  <input type="number" id="timeInput" min="0" />
+
+  <label>Mood</label>
+  <select id="moodInput">
+    <option value="😊">😊 Happy</option>
+    <option value="😐">😐 Okay</option>
+    <option value="😞">😞 Tired</option>
+  </select>
+
+  <label>Blockers</label>
+  <textarea id="blockersInput" rows="2"></textarea>
+
+  <label>Task Date</label>
+<input type="date" id="taskDate" />
+
+  <button id="submitLog">Submit Log</button>
+  <button id="exportBtn">Export My Logs</button>
+
+  <h3>Productivity Chart (Past 7 Days)</h3>
+  <canvas id="productivityChart" width="100%" height="200"></canvas>
+
+  <h3>My Logs</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Mood</th>
+        <th>Blockers</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody id="logsTable"></tbody>
+  </table>
+
+  <button class="logoutBtn">Logout</button>
+</section>
+
+<!-- 👨‍💼 Manager -->
+<section id="managerSection" class="hidden">
+  <h2>Manager Dashboard</h2>
+
+  <h3>Filter Logs</h3>
+  <select id="filterDeveloper"></select>
+  <input type="text" id="filterTask" placeholder="Task keywords" />
+  <input type="text" id="filterBlockers" placeholder="Blocker keywords" />
+  <input type="date" id="filterFromDate" />
+  <input type="date" id="filterToDate" />
+  <button id="applyFiltersBtn">Apply Filters</button>
+
+  <button id="exportAllBtn">Export All Logs</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Developer</th>
+        <th>Date</th>
+        <th>Tasks</th>
+        <th>Time</th>
+        <th>Mood</th>
+        <th>Blockers</th> 
+        <th>Feedback</th>
+        <th>Reviewed</th>
+      </tr>
+    </thead>
+    <tbody id="managerLogsTable"></tbody>
+  </table>
+
+  <button class="logoutBtn">Logout</button>
+</section>
+
+<!-- 💻 Modules -->
+<script type="module" src="scripts/auth.js"></script>
+
+</body>
+</html>
